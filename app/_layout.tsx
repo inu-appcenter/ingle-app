@@ -1,7 +1,7 @@
 import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { ActivityIndicator, View } from 'react-native';
+import { ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { WebView } from 'react-native-webview';
 
@@ -19,20 +19,18 @@ export default function RootLayout() {
   //SafeAreaView is used to ensure the content is rendered within the safe area boundaries of a device
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <View>
-        <WebView
-          source={{ uri: 'http://192.168.45.249:5173/' }}
-          onLoadEnd={() => setWebviewReady(true)}
-          style={{ flex: 1 }}
-          originWhitelist={['*']}
-          javaScriptEnabled
-          domStorageEnabled
-          startInLoadingState
-          renderLoading={() => (
-            <ActivityIndicator size="large" color="#0000ff" style={{ flex: 1, justifyContent: 'center' }} />
-          )}
-        />
-      </View>
+      <WebView
+        source={{ uri: 'http://192.168.45.249:5173/' }} // Replace with your local server URL
+        onLoadEnd={() => setWebviewReady(true)}
+        style={{ flex: 1 }}
+        originWhitelist={['*']}
+        javaScriptEnabled
+        domStorageEnabled
+        startInLoadingState
+        renderLoading={() => (
+          <ActivityIndicator size="large" color="#0000ff" style={{ flex: 1, justifyContent: 'center' }} />
+        )}
+      />
       <StatusBar style="auto" />
     </SafeAreaView>
   );
