@@ -1,29 +1,37 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
+import { useState } from 'react';
+import { ActivityIndicator } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { WebView } from 'react-native-webview';
 
-import { useColorScheme } from '@/hooks/useColorScheme';
-
+//safeareaview 왜 안됨..ㅠ
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
 
+  const [webviewReady, setWebviewReady] = useState(false);
+
   if (!loaded) {
-    // Async font loading only occurs in development.
     return null;
   }
-
+  //SafeAreaView is used to ensure the content is rendered within the safe area boundaries of a device
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
+    <SafeAreaView style={{ flex: 1 }}>
+      <WebView
+        source={{ uri: 'http://192.168.45.249:5173/' }} // Replace with your local server URL
+        onLoadEnd={() => setWebviewReady(true)}
+        style={{ flex: 1 }}
+        originWhitelist={['*']}
+        javaScriptEnabled
+        domStorageEnabled
+        startInLoadingState
+        renderLoading={() => (
+          <ActivityIndicator size="large" color="#0000ff" style={{ flex: 1, justifyContent: 'center' }} />
+        )}
+      />
       <StatusBar style="auto" />
-    </ThemeProvider>
+    </SafeAreaView>
   );
 }
