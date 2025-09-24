@@ -3,6 +3,7 @@
     "name": "ingle",
     "slug": "ingle",
     "version": "1.0.0",
+    "owner": "congee1003",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "ingle",
@@ -16,7 +17,8 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.congee1003.ingle"
     },
     "web": {
       "bundler": "metro",
@@ -37,6 +39,12 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "150cede8-d0a5-4429-afc5-4f9d1e6f3922"
+      }
     }
   }
 }
