@@ -1,4 +1,4 @@
-package com.inuappcenter.ingle
+package com.congee1003.ingle
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -1,4 +1,4 @@
-package com.inuappcenter.ingle
+package com.congee1003.ingle
 
 import android.content.Context
 import android.content.Intent

@@ -3,16 +3,16 @@ plugins {
 }
 
 android {
-    namespace = "com.inuappcenter.ingle"
+    namespace = "com.congee1003.ingle"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "com.inuappcenter.ingle"
+        applicationId = "com.congee1003.ingle"
         minSdk = 33
         targetSdk = 36
-        versionCode = 1
+        versionCode = 2
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

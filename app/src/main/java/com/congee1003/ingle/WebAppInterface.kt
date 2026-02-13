@@ -1,4 +1,4 @@
-package com.inuappcenter.ingle
+package com.congee1003.ingle
 
 import android.util.Log
 import android.webkit.JavascriptInterface

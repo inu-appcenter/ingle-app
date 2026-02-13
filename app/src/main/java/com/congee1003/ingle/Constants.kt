@@ -1,4 +1,4 @@
-package com.inuappcenter.ingle
+package com.congee1003.ingle
 
 object Constants {
     const val BASE_URL = "https://inu-ingle-web.pages.dev"
