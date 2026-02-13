@@ -1,9 +1,32 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <!-- Base application theme. -->
     <style name="Base.Theme.Ingle" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <!-- Primary Color -->
+        <item name="colorPrimary">@color/ingle_color</item>
+
+        <!-- Status Bar -->
+        <item name="android:statusBarColor">@android:color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- Dialog Theme -->
+        <item name="android:alertDialogTheme">@style/Theme.Ingle.Dialog</item>
+
     </style>
 
     <style name="Theme.Ingle" parent="Base.Theme.Ingle" />
+
+    <!-- Dialog Theme -->
+    <style name="Theme.Ingle.Dialog" parent="android:Theme.DeviceDefault.Light.Dialog.Alert">
+        <item name="android:buttonBarPositiveButtonStyle">@style/Ingle.Dialog.Button</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/Ingle.Dialog.Button</item>
+        <item name="android:buttonBarNeutralButtonStyle">@style/Ingle.Dialog.Button</item>
+    </style>
+
+    <!-- Dialog Button Style -->
+    <style name="Ingle.Dialog.Button" parent="android:style/Widget.DeviceDefault.Button.Borderless">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
 </resources>
